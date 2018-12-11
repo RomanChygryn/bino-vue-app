@@ -1,0 +1,326 @@
+
+.header {
+  overflow: hidden;
+  @include OpenSans;
+  height: auto;
+  min-width: 300px;
+
+  .ie-hack-icon {
+    width: 85px;
+    height: 85px;
+    position: relative;
+  }
+  &__icon {
+    width: 100%;
+    position: relative;
+    z-index: 6;
+    margin-top: -40px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    &-wrapper {
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      position: relative;
+      z-index: 6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      @include wh(69px, 69px);
+      margin: 0 auto;
+      background: #f4f5f9;
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.25);
+      box-sizing: border-box;
+      img {
+        width: 30%;
+      }
+      @include less-xl {
+        top: -30px;
+      }
+    }
+  }
+  &__shape {
+    width: 52%;
+    height: 150px;
+    position: absolute;
+    z-index: 5;
+    bottom: -60px;
+    background: #fff;
+    @include mobile {
+      width: 58%;
+    }
+    &--left {
+      right: 50%;
+      transform: rotate(7deg);
+      @include mobile {
+        transform: rotate(10deg);
+      }
+    }
+    &--right {
+      left: 50%;
+      transform: rotate(-7deg);
+      @include mobile {
+        transform: rotate(-10deg);
+      }
+    }
+  }
+}
+
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
+
+.header__slider {
+  position: relative;
+  background: #000;
+  z-index: 2;
+  .slider__image {
+    width: 100%;
+    z-index: 3;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    background: #000;
+    max-height: 950px;
+    @include mobile {
+      align-items: center;
+    }
+    &:after {
+      z-index: 4;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .7);
+    }
+    img {
+      height: 100%;
+      display: block;
+      @include mobile {
+        max-height: 800px;
+      }
+    }
+  }
+
+  .slick-active {
+    .slider__text {
+      .slider__title {
+        animation: fadeInDown 1s both 1s;
+      }
+    }
+    .slider__separator {
+      animation: fadeIn 1s both 2s;
+    }
+    .slider__subtitle {
+      animation: fadeInLeft 1s both 1.5s;
+    }
+    .slider__description {
+      animation: fadeInRight 1s both 1.5s;
+    }
+    .slider__buttons {
+      animation: fadeIn 1s both 2s;
+    }
+  }
+
+  .ie-hack {
+    @include mobile {
+      width: 90%;
+    }
+  }
+  .slider__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .slider__text {
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .blocks-box,
+  .slick-slider {
+    margin: 0;
+    padding: 0;
+  }
+
+  .slick-slide {
+    float: left;
+    padding: 0;
+  }
+
+  .slider__arrow {
+    border-radius: 3px;
+    position: absolute;
+    top: 47%;
+    width: 45px;
+    height: 45px;
+    background: #e74c3c;
+    border: 0 none;
+    margin-top: -22.5px;
+    text-align: center;
+    color: #FFF;
+    z-index: 5;
+    transition: all .5s;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &--left {
+      left: 40px;
+    }
+    &--right {
+      right: 40px;
+    }
+    &-icon {
+      width: 100%;
+      font-size: 30px;
+    }
+    i {
+      font-size: 25px;
+    }
+  }
+  .slick-disabled {
+    background: #686868;
+    opacity: .5;
+    i {
+      color: #343434;
+    }
+  }
+
+  .slider__title {
+    opacity: 1;
+    text-transform: uppercase;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 6.5px;
+    text-align: center;
+    @include less-l {
+      font-size: 6.5vw;
+    }
+    @include mobile {
+      font-size: 12vw;
+    }
+  }
+
+  .slider__subtitle {
+    opacity: 1;
+    font-size: 24px;
+    text-transform: capitalize;
+    font-weight: 400;
+    margin: 70px auto 25px auto;
+    padding: 0;
+    color: #FFF;
+    overflow: hidden;
+    @include less-l {
+      font-size: 2.5vw;
+    }
+    @include mobile {
+      font-size: 6vw;
+      margin-top: 60px;
+      margin-bottom: 20px;
+    }
+  }
+  .slider__description {
+    opacity: 1;
+    font-size: 14px;
+    color: #cbc6c0;
+    max-width: 586px;
+    margin: 0 auto;
+    line-height: 1.8;
+    @include less-l {
+      font-size: 1.7vw;
+    }
+    @include mobile {
+      font-size: 3.8vw;
+    }
+  }
+  .slider__separator {
+    opacity: 1;
+    position: relative;
+    margin: 30px auto 30px;
+    @include wh(7px, 7px);
+    background: #e74c3c;
+    border-radius: 50%;
+    @include mobile {
+      margin: 25px auto 25px;
+    }
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      border-bottom: 1px solid #f1ebe7;
+      top: 0;
+      width: 80px;
+    }
+    &:after {
+      left: 20px;
+    }
+    &:before {
+      right: 20px;
+    }
+  }
+  .slider__buttons {
+    opacity: 1;
+    margin-top: 70px;
+    @include mobile {
+      margin-top: 50px;
+      margin-bottom: 108px;
+    }
+  }
+
+  .slick-dots {
+    list-style: none;
+    position: absolute;
+    z-index: 999;
+    bottom: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    li {
+      @include wh(16px, 16px);
+      margin: 0 13px;
+      button {
+        position: relative;
+        border: none;
+        background: transparent;
+        color: transparent;
+        @include wh(1px, 1px);
+        &:focus {
+          outline: none;
+        }
+        &:before {
+          left: -1px;
+          cursor: pointer;
+          position: absolute;
+          @include wh(16px, 16px);
+          content: '';
+          border-radius: 50%;
+          border: 2px solid #c5c7c8;
+          opacity: 1;
+        }
+      }
+    }
+    .slick-active {
+      button:before {
+        background: #c5c7c8;
+      }
+    }
+  }
+}

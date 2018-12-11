@@ -1,0 +1,54 @@
+@mixin wh($w,$h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin mobilesm {
+  @media (max-width: 471px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin mobilexl {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin before-desktop {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+@mixin desktop-start {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin less-xl {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+ @mixin less-l {
+   @media (max-width: 992px) {
+     @content;
+   }
+ }
+
+
+@mixin OpenSans {
+  font-family: 'Open Sans', sans-serif;
+}
+@mixin SourceSans {
+  font-family: 'Source Sans Pro', sans-serif;
+}

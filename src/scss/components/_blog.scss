@@ -1,0 +1,161 @@
+.blog {
+  padding: 100px 0;
+  background: #f4f5f9;
+  &__header {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  .title-primary {
+    color: #6c6c6c;
+  }
+  .subtitle-primary {
+    color: #999999;
+  }
+  &__item {
+    padding: 0 !important;
+  }
+  &__content {
+    margin-top: 100px;
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+
+  .article-prev {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-height: 480px;
+    @include mobile {
+      max-height: unset;
+      flex-wrap: wrap;
+    }
+    &__image {
+      width: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+      }
+      img {
+        height: 100%;
+        @include mobile {
+          height: auto;
+          width: 100%;
+        }
+      }
+    }
+
+    .first {
+      @include mobile {
+        order: 1;
+      }
+    }
+    .second {
+      @include less-xl {
+        order: 2;
+      }
+    }
+    .third {
+      order: 2;
+      @include less-xl {
+        order: 0;
+      }
+      @include mobile {
+        order: 1;
+      }
+    }
+    .fourth {
+      order: 2;
+    }
+
+    &__tags {
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin-bottom: 20px;
+      li {
+        @include OpenSans;
+        font-size: 14px;
+        text-transform: lowercase;
+        display: inline-block;
+        color: #fff;
+        @include before-desktop {
+          font-size: 12px;
+        }
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+    &__desc {
+      width: 50%;
+      box-sizing: border-box;
+      padding: 50px 50px;
+      background: #e74e3e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      @include mobile {
+        width: 100%;
+      }
+    }
+    &__title {
+      @include SourceSans;
+      font-weight: 500;
+      font-size: 1.3vw;
+      color: #fff;
+      width: 100%;
+      @include less-xl {
+        font-size: 1.8vw;
+      }
+      @include mobilexl {
+        font-size: 4.5vw;
+      }
+      @include mobile {
+        font-size: 28px;
+      }
+    }
+    &__text {
+      @include OpenSans;
+      font-size: .8vw;
+      line-height: 1.8;
+      color: #fff;
+      width: 100%;
+      @include less-xl {
+        font-size: 1.4vw;
+      }
+      @include mobilexl {
+        font-size: 2vw;
+      }
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    .separator-secondary {
+      margin: 30px auto 30px 0;
+    }
+  }
+  .btn-link {
+    @include OpenSans;
+    font-weight: 500;
+    font-style: italic;
+    color: #fff;
+    padding-left: 0;
+    margin-left: 0;
+    min-width: unset;
+    font-size: .9vw;
+    @include less-xl {
+      font-size: 1.4vw;
+    }
+    @include mobilexl {
+      font-size: 2vw;
+    }
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+}

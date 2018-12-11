@@ -1,0 +1,45 @@
+.history {
+  padding-bottom: 100px;
+  .halftext {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    @include less-l {
+      flex-wrap: wrap;
+    }
+    &__image {
+      padding-right: 75px;
+      display: flex;
+      align-items: center;
+      width: 50%;
+      @include less-l {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 50px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    &__content {
+      width: 50%;
+      @include less-l {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .description-primary {
+        max-width: 100%;
+      }
+    }
+    .btn {
+      margin-left: 5px;
+      @include mobile {
+        margin: 0 auto;
+      }
+    }
+  }
+  .section-separator {
+    margin: 100px 0;
+  }
+}

@@ -1,0 +1,8 @@
+.section-separator-container {
+  padding: 50px 0;
+  background: #F4F5F9;
+}
+.section-separator {
+  background: #e6e7eb;
+  @include wh(100%, 1px);
+}

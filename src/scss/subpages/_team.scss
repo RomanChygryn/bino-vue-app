@@ -1,0 +1,11 @@
+.team__subpage {
+  .team {
+    padding-top: 200px;
+    height: 1080px;
+    max-height: unset;
+    .item {
+      top: unset;
+      @include wh(100px, 100px);
+    }
+  }
+}

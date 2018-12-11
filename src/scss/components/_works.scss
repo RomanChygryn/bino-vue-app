@@ -1,0 +1,285 @@
+.works {
+  padding: 100px 0;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #F4F5F9;
+  &__header {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  &__items {
+    .btn {
+      margin: 0 auto;
+    }
+    .btn-secondary {
+      color: #000;
+      border-color: #000;
+      &:focus {
+        color: #000;
+        outline: none;
+      }
+      &:active {
+        color: #000;
+        outline: none;
+      }
+    }
+    &-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      width: 100%;
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0!important;
+    margin: 0;
+    overflow: hidden;
+    max-height: 480px;
+    max-width: 480px;
+    cursor: pointer;
+    position: relative;
+    z-index: 5;
+    &:hover .works__item-overlay {
+      @include desktop-start {
+        top: 0;
+        opacity: 1;
+      }
+    }
+    &-overlay {
+      padding: 50px;
+      z-index: 2;
+      transition: all .6s cubic-bezier(0.645, 0.045, 0.355, 1);
+      opacity: 0;
+      filter: alpha(opacity=0);
+      background-color: rgba(204, 81, 76, .8);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: flex-end;
+      @include before-desktop {
+        height: 40%;
+        top: unset;
+        bottom: 0;
+        opacity: 1;
+        background-color: rgba(204, 81, 76, .5);
+        padding: 0 10px 20px 30px
+      }
+      @include mobile {
+        padding: 0 10px 50px 30px
+      }
+      @include mobilesm {
+        padding: 0 10px 30px 30px
+      }
+    }
+    .separator-secondary {
+      margin: 30px auto 30px 0;
+      @include before-desktop {
+        margin: 10px auto 15px 0;
+      }
+    }
+    &-title {
+      width: 100%;
+      text-transform: uppercase;
+      @include SourceSans;
+      font-size: 24px;
+      color: #fff;
+      margin-bottom: 20px;
+      @include before-desktop {
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+    }
+    &-tags {
+      width: 100%;
+      display: block;
+      padding: 0;
+      margin: 0;
+      li {
+        @include OpenSans;
+        font-size: 14px;
+        text-transform: lowercase;
+        display: inline-block;
+        color: #fff;
+        @include before-desktop {
+          font-size: 12px;
+        }
+        &:not(:first-child) {
+          margin-left: 5px;
+        }
+      }
+    }
+    .works__item-link {
+      position: relative;
+      z-index: 9;
+      width: 100%;
+      .works__modal {
+        position: absolute;
+        z-index: 10;
+      }
+    }
+    .works__project-image {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+  }
+  &__gallery {
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-height: 720px;
+    }
+    &-image {
+      width: 100%;
+    }
+    .slider__arrow {
+      border-radius: 3px;
+      position: absolute;
+      top: 47%;
+      width: 45px;
+      height: 45px;
+      background: #e74c3c;
+      border: 0 none;
+      margin-top: -22.5px;
+      text-align: center;
+      color: #FFF;
+      z-index: 5;
+      transition: all .5s;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+      &--left {
+        left: 40px;
+      }
+      &--right {
+        right: 40px;
+      }
+      &-icon {
+        width: 100%;
+        font-size: 30px;
+      }
+      i {
+        font-size: 25px;
+      }
+    }
+    .slick-dots {
+      list-style: none;
+      position: absolute;
+      z-index: 999;
+      bottom: -50px;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding: 0;
+      li {
+        @include wh(16px, 16px);
+        margin: 0 13px;
+        button {
+          position: relative;
+          border: none;
+          background: transparent;
+          color: transparent;
+          @include wh(1px, 1px);
+          &:focus {
+            outline: none;
+          }
+          &:before {
+            left: -1px;
+            cursor: pointer;
+            position: absolute;
+            @include wh(16px, 16px);
+            content: '';
+            border-radius: 50%;
+            border: 2px solid #c5c7c8;
+            opacity: 1;
+          }
+        }
+      }
+      .slick-active {
+        button:before {
+          background: #c5c7c8;
+        }
+      }
+    }
+  }
+  .category {
+    margin-bottom: 50px;
+    &__item-reset {
+      //padding-right: 30px;
+    }
+    .noCategorySelected {
+      color: #e74c3c;
+    }
+    &__item-name {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 600;
+      color: #999999;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      &:focus {
+        outline: none;
+      }
+    }
+    &__item-checkbox {
+      display: none;
+      ~ .category__checkbox-custom {
+        .category__item-name {
+          @include OpenSans;
+          text-transform: uppercase;
+          font-size: 14px;
+          font-weight: 600;
+          color: #999999;
+          cursor: pointer;
+          span {
+            margin: 0 5px;
+            color: #999999;
+          }
+
+        }
+      }
+      &:checked {
+        ~ .category__checkbox-custom {
+          .category__item-name {
+            color: #e74c3c;
+          }
+        }
+      }
+    }
+  }
+}
+
+#app {
+  .modal {
+    padding-right: 0 !important;
+    background: rgba(0, 0, 0, .9);
+    .modal-dialog {
+      max-width: 1440px;
+      width: 90%;
+      margin: 0 auto;
+      .modal-content {
+        border: none;
+        border-radius: unset;
+        background: transparent;
+        .modal-body {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

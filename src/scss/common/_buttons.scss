@@ -1,0 +1,122 @@
+.btn {
+  @include OpenSans;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 15px 20px;
+  background: transparent;
+  min-width: 225px;
+  box-sizing: border-box;
+  margin: 0 13px;
+  text-transform: uppercase;
+  @include mobile {
+    font-size: 3.8vw;
+  }
+}
+.slider__arrow {
+  border-radius: 3px;
+  position: absolute;
+  top: 47%;
+  width: 45px;
+  height: 45px;
+  background: #e74c3c;
+  border: 0 none;
+  margin-top: -22.5px;
+  text-align: center;
+  color: #FFF;
+  z-index: 5;
+  transition: all .5s;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+.btn-close {
+  position: absolute;
+  z-index: 10;
+  @include wh(30px,30px);
+  @include SourceSans;
+  border-radius: 3px;
+  background: transparent;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 100;
+  top: 0;
+  right: 0;
+  margin-top: -40px;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: transform .5s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+.btn-primary {
+  background: #e74c3c;
+  border: 2px solid #e74c3c;
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.5);
+  transition: all .5s;
+  &:hover {
+    background: #d64738;
+    border-color: #d64738;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #d64738;
+  border-color: #d64738;
+  box-shadow: none;
+  outline: none;
+}
+.btn-secondary {
+  border-color: rgba(255,255,255, .7);
+  &:hover {
+    background: none;
+    border-color: rgba(255,255,255, 1);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show>.btn-secondary.dropdown-toggle {
+  color: #fff;
+  background: none;
+  border-color: rgba(255,255,255, 1);
+  box-shadow: none;
+  outline: none;
+}
+
+.scroll-top {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 48px;
+  color: #e74c3c;
+  position: fixed;
+  right: 30px;
+  bottom: 65px;
+  z-index: 999;
+  opacity: .5;
+  transition: all .5s;
+  &:hover {
+    opacity: 1;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+.isVisible {
+  opacity: .8;
+  z-index: 4;
+  transition: all .4s ease-in;
+}

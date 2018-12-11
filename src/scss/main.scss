@@ -1,0 +1,70 @@
+//@import 'bootstrap/scss/bootstrap-reboot.scss';
+//@import 'bootstrap/scss/bootstrap-grid.scss';
+@import 'reboot';
+
+@import 'bootstrap/scss/_mixins.scss';
+//@import 'lity/dist/lity.css';
+
+
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
+
+
+@import "mixins";
+@import "common/buttons";
+@import "slick";
+
+@import "common/sectionseparator";
+@import "common/texts";
+@import "components/header";
+@import "components/navigation";
+@import "components/features";
+@import "components/works";
+@import "components/history";
+@import "components/service";
+@import "components/works";
+@import "components/study";
+@import "components/stats";
+@import "components/price";
+@import "components/team";
+@import "components/partners";
+@import "components/blog";
+@import "components/contact";
+@import "components/trial";
+@import "components/footer";
+
+
+@import "subpages/article";
+@import "subpages/contact";
+@import "subpages/aboutus";
+@import "subpages/price";
+@import "subpages/portfolio";
+@import "subpages/team";
+@import "subpages/blog";
+
+body {
+@include OpenSans;
+}
+
+body .modal-open {
+  overflow: scroll!important;
+  padding-right: 0!important;
+}
+
+
+
+#app {
+
+  @import 'bootstrap/scss/mixins/_breakpoints.scss';
+  @import 'bootstrap/scss/mixins/_grid-framework.scss';
+  @import 'bootstrap/scss/mixins/_grid.scss';
+  @import 'bootstrap/scss/_modal.scss';
+  //@import 'bootstrap/scss/_buttons.scss';
+
+  @import 'bootstrap/scss/_grid.scss';
+  @import 'bootstrap/scss/utilities/_display.scss';
+  @import 'bootstrap/scss/utilities/_flex.scss';
+
+  @import 'bootstrap/scss/_transitions.scss';
+  @import 'bootstrap/scss/utilities/_spacing.scss';
+}

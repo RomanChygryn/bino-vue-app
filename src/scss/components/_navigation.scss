@@ -1,0 +1,174 @@
+.navbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 35px 0;
+  .logo {
+    @include OpenSans;
+    overflow: hidden;
+    @include wh(141px, 53px);
+    border: 3px solid #f4f5f9;
+    display: flex;
+    &__left {
+      @include wh(49px, 49px);
+      background: #f4f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-text {
+        text-transform: uppercase;
+        color: #4a4c55;
+        font-weight: 800;
+        font-size: 36px;
+      }
+    }
+    &__right {
+      @include wh(86px, 50px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-text {
+        font-weight: 100;
+        font-size: 36px;
+        text-transform: uppercase;
+        color: #f1ebe7;
+      }
+    }
+  }
+  .navbar-toggler {
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 35px;
+    right: 34px;
+    z-index: 6;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    @include less-l {
+      display: block;
+    }
+    @include wh(45px,45px);
+    .nav__mobile--toggle {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      cursor: pointer;
+      padding: 0;
+      span,
+      span:before,
+      span:after {
+        cursor: pointer;
+        border-radius: 1px;
+        height: 3px;
+        width: 31px;
+        background: #ffffff;
+        position: absolute;
+        display: block;
+        content: '';
+        transition: all 300ms ease-in-out;
+      }
+      span:before {
+        top: -10px;
+      }
+      span:after {
+        bottom: -10px;
+      }
+      &.active span {
+        background-color: transparent;
+        &:before,
+        &:after {
+          top: 0;
+          background: #000;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .navbar-nav {
+    @include less-l {
+      z-index: 5;
+      background: #fff;
+      width: 90%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-top: 90px;
+      animation:fadeInRight 1s;
+      height: 100vh;
+      transition: all 1s;
+    }
+  }
+
+  .collapsing {
+    top: 0;
+    position: absolute;
+    transition: none;
+    transition-delay: unset;
+  }
+
+  .navbar-brand {
+    padding-left: 5px;
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+
+  .nav-item {
+    padding: 0 29px;
+    @include less-l {
+      border-top: 1px solid #dfdfdf;
+      padding: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+      @include less-l {
+        border-bottom: 1px solid #dfdfdf;
+      }
+    }
+    .nav-link {
+      border-bottom: 2px solid transparent;
+      padding: 20px 0;
+      color: #ffffff;
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: .9;
+      transition: all .5s;
+      width: 100%;
+      @include less-l {
+        width: 100%;
+        display: block;
+        padding: 15px 30px;
+        font-size: 26px;
+        font-weight: 600;
+        border: none;
+        color: #6a6a6a;
+        &:focus {
+          color: #e74c3c;
+          background-color: #f0f0f0;
+        }
+      }
+      &:hover {
+        border-bottom: 2px solid #e74c3c;
+        color: #e74c3c;
+        @include less-l {
+          border: none;
+        }
+      }
+    }
+  }
+}
+.navbar-sub {
+  background: rgba(0,0,0,.6);
+}

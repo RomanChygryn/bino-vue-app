@@ -1,0 +1,112 @@
+.contact {
+  padding-bottom: 100px;
+  background: #F4F5F9;
+  &__header {
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__column {
+    padding: 30px 90px 100px;
+    box-sizing: border-box;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    min-height: 715px;
+    transition: background-color .5s;
+    @include mobile {
+      padding: 0 50px 50px;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    @include less-xl {
+      justify-content: center;
+    }
+  }
+  &__disclaimer {
+    font-size: 10px;
+    color: #e74e3e;
+  }
+  &__form {
+    padding-top: 70px;
+    .input {
+      display: block;
+      input,
+      textarea {
+        display: block;
+        border: none;
+        resize: none;
+        border-bottom: 1px solid #e5e5e5;
+        width: 100%;
+        @include OpenSans;
+        font-size: 14px;
+        color: #000;
+        &:focus {
+          outline: none;
+        }
+      }
+      label {
+        display: block;
+        @include OpenSans;
+        font-weight: 600;
+        font-size: 14px;
+        color: #999;
+        margin-top: 30px;
+      }
+    }
+    .btn-primary {
+      background: #E74E3E;
+      border-color: #E74E3E;
+      margin-top: 30px;
+      margin-left: 0;
+    }
+  }
+  &__info-title {
+    width: 100%;
+    @include SourceSans;
+    font-size: 24px;
+    font-weight: 600;
+    color: #e74e3e;
+    text-transform: uppercase;
+    margin: 70px 0 28px;
+  }
+  &__info-description {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    @include OpenSans;
+    color: #999;
+    line-height: 1;
+  }
+  &__info-link {
+    width: 100%;
+    display: block;
+    font-size: 18px;
+    @include OpenSans;
+    color: #999;
+    line-height: 1.8;
+    display: block;
+  }
+  .formSent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E74E3E;
+  }
+  &__form-done {
+    text-align: center;
+    @include SourceSans;
+    color: #fff;
+    &-link {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: .5;
+      transition: opacity .5s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
